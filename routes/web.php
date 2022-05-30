@@ -28,3 +28,5 @@ Route::prefix('admin/posts')
         Route::get('/', 'PostController@index')->name('index');
         Route::get('/{id}', 'PostController@show')->name('show');
 });
+
+Route::resource('form', 'FormController');
