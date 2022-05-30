@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@php
+use Carbon\Carbon;
+@endphp
+
 @section('content')
     <div class="container">
         <table class="table">
@@ -26,7 +30,8 @@
                         </td>
                         <td>{{ $post->author }}</td>
                         <td>{{ Str::of($post->text)->limit(40, '...') }}</td>
-                        <td>{{ $post->created_at }}</td>
+                        <td>{{ Carbon::createFromFormat('Y-m-d H:i:s', $post->created_at)->format('d/m/Y H:i') }}
+                        </td>
                     </tr>
                 @empty
                     <tr>
