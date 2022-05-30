@@ -30,3 +30,4 @@ Route::prefix('admin/posts')
 });
 
 Route::resource('form', 'FormController');
+Route::get('/mail', 'HomeController@sendEmail');
